@@ -31,7 +31,7 @@ python "$LAB/scripts/deploy_mujoco_keyboard.py" --config "$LAB/configs/rl_gym_g1
 
 Usar W/S para avance y retroceso, A/D para giro, Q/E para desplazamiento lateral, espacio para detener el comando y X para salir. El foco debe estar en la terminal. Cada tecla sustituye el vector completo; los comandos permanecen activos hasta otra tecla. No cambia los pesos de la policy.
 
-Para una instalación nueva, consultar [environment](docs/02-environment.md), obtener las revisiones indicadas y seguir las instrucciones oficiales de dependencias de cada stack. Este laboratorio no instala el stack de entrenamiento Isaac Gym.
+Para una instalación nueva desde Windows 11, seguir la [guía Windows/WSL](docs/10-windows11-wsl-setup.md), consultar [environment](docs/02-environment.md) y obtener las revisiones indicadas. Este laboratorio no instala el stack de entrenamiento Isaac Gym.
 
 ## Arquitectura
 
@@ -55,6 +55,10 @@ Mjlab: teclado/gamepad → FSM → policy ONNX → LowCmd → simulador DDS (dom
 10. [Problemas y soluciones](troubleshooting/README.md)
 11. [Parches y reproducción](patches/README.md)
 12. [Validación realizada](docs/validation.md)
+13. [Instalación desde Windows 11 y WSL2](docs/10-windows11-wsl-setup.md)
+14. [Experiencia, decisiones y próximos pasos](docs/11-experience-and-next-steps.md)
+15. [Historial recuperado: dos PCs, primeras pruebas y fallos](docs/12-recovered-history.md)
+16. [Prototipos iniciales preservados](scripts/historical/README.md)
 
 Los controladores low-level son experimentos educativos exclusivos de simulación. No constituyen un controlador validado para un G1 físico. Ver los límites concretos en sim-to-real.
 
@@ -65,8 +69,8 @@ Los controladores low-level son experimentos educativos exclusivos de simulació
 - [unitree_rl_gym](https://github.com/unitreerobotics/unitree_rl_gym)
 - [unitree_rl_mjlab](https://github.com/unitreerobotics/unitree_rl_mjlab)
 
-La documentación refleja el estado local inspeccionado el 27 de septiembre de 2026. Las observaciones de movimiento proceden de los chats unitreerobotics y unitreerobotics2; no se repitieron las pruebas visuales al preparar este repositorio.
+La documentación refleja el estado local inspeccionado el 27 de septiembre de 2026. Las observaciones de movimiento proceden de los chats unitreerobotics y unitreerobotics2; no se repitieron las pruebas visuales al preparar este repositorio. La conversación pública permitió recuperar los intentos iniciales y tres prototipos adicionales, incluidos resultados fallidos y diagnósticos que quedaron abiertos.
 
-##
+## Licencia
+
 La documentación y los aportes originales de Sarreche se ofrecen bajo [licencia MIT](LICENSE). El material de terceros y las partes derivadas conservan sus licencias BSD-3-Clause o Apache-2.0 y sus atribuciones; ver [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
-

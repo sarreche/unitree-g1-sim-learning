@@ -9,3 +9,7 @@ El tercer enfoque introdujo una FSM: Passive → FixStand → Velocity → Mimic
 Usar low-level cuando el objetivo sea estudiar sensores, mensajes y control articular; RL gym cuando se quiera estudiar la interfaz entre comandos y locomoción aprendida; mjlab cuando interese la composición de estados y policies de cuerpo completo. Son flujos diferentes, no tres componentes que deban correr juntos.
 
 No se entrenaron redes ni se probó hardware físico. Los resultados históricos son cualitativos: no hay mediciones de tasa de caída, errores de tracking ni ensayos estadísticos. Los chats orientan el relato; código, configuraciones y cambios locales son la evidencia técnica recuperada.
+
+## Motivación original y primeros hitos
+
+El hardware objetivo era G1 EDU y el interés principal eran aplicaciones/skills, incluido patrullaje. ROS2, Mac, VPS e Isaac se discutieron como opciones; no forman parte de los flujos validados aquí. La primera charla ya logró lectura LowState y una orden de codo, antes de las pruebas de postura cero y de instalar mjlab. Ver [cronología completa recuperada](12-recovered-history.md).

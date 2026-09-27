@@ -46,3 +46,25 @@ cmake --version
 nvidia-smi
 ip link show lo
 ```
+
+## Ampliación: instalación Windows, C++ y Conda
+
+La guía [10-windows11-wsl-setup.md](10-windows11-wsl-setup.md) reconstruye instalación, dependencias, venvs, SDK C++ y compilación. Se apoya en comandos locales y fuentes oficiales y distingue recomendaciones de hechos comprobados.
+
+El SDK C++ unitree_sdk2 está instalado bajo /usr/local, con ddsc y ddscxx. Su commit se añadió al manifiesto. El simulador mjlab enlaza MuJoCo C++ 3.3.6; g1_ctrl enlaza ONNX Runtime 1.22.0. ldd resolvió sus dependencias sin entradas not found.
+
+Existe también Miniconda en ~/miniconda3 y un entorno llamado unitree-rl. Es distinto del venv ~/unitree-rl-env; la tabla original solo inventariaba los dos venvs. El soporte gráfico usa WSLg. No se acreditó entrenamiento ni se reinstaló el entorno al documentarlo.
+
+| Componente adicional | Versión inspeccionada |
+|---|---|
+| Python de Conda unitree-rl | 3.11.16 |
+| mjlab en Conda | 1.2.0 |
+| unitree_rl_mjlab en Conda | 0.0.1 |
+| MuJoCo en Conda | 3.14.0 |
+| mujoco-warp en Conda | 3.5.0 |
+| NumPy en Conda | 2.4.6 |
+| PyTorch en Conda | 2.14.0 |
+| ONNX en Conda | 1.23.0 |
+| WSLg | 1.0.66 |
+
+La presencia del paquete de entrenamiento en Conda acredita instalación, no una sesión de entrenamiento completada. Se corrige así el alcance del inventario inicial, que omitía ese tercer entorno.

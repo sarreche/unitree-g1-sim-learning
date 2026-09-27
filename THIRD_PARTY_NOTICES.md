@@ -15,3 +15,6 @@ Los archivos scripts son versiones modificadas el 2026-09-27 para limpieza y doc
 
 No se redistribuyen policies, referencias de movimiento, meshes ni bibliotecas vendorizadas. Mjlab incluye licencias adicionales de mjlab, cnpy y ONNX Runtime en doc/license del repo oficial; sus componentes siguen sujetos a esas condiciones. No se supone una licencia uniforme de modelos y datos a partir de la licencia raíz.
 
+## Prototipos iniciales recuperados
+
+scripts/historical/read_g1.py y move_elbow.py son prototipos locales desarrollados en la conversación, que usan el SDK como dependencia; se ofrecen bajo MIT para los aportes de Sarreche. scripts/historical/stand_g1.py conserva ganancias tomadas del ejemplo oficial G1 de unitree_sdk2_python y se entrega con atribución BSD-3-Clause y la licencia correspondiente. Se agregaron cabeceras de procedencia, sin alterar el cuerpo de los tres scripts.

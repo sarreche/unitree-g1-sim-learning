@@ -32,3 +32,21 @@ La limpieza mantiene las fórmulas y configuración recuperadas. Sintaxis correc
 - El cuerpo efectivo original de LowCmdWrite coincide por AST con el recuperado, antes de añadir docstrings.
 - Enlaces internos comprobados; no hay policies ni binarios copiados.
 - Procedencia y hashes de scripts originales/entregados en script-provenance.json.
+
+## Ampliación del historial e instalación
+
+- Rama de trabajo: docs/windows11-setup-and-experience; main no se editó.
+- Lectura de los cinco intercambios disponibles de unitreerobotics. El acceso al historial anterior no estuvo disponible; no se afirma revisión completa.
+- Se inspeccionaron comandos pertinentes del historial Linux, instrucciones locales, caches CMake, manifest de instalación y ldd de ambos binarios.
+- Confirmado SDK C++ en /usr/local, MuJoCo C++ 3.3.6, ONNX Runtime 1.22.0 y entorno Conda adicional.
+- Se verificaron fuentes oficiales de Microsoft y NVIDIA para los pasos Windows/WSL y la separación del driver host.
+- Comandos de instalación incluidos como documentación: no se ejecutaron instalaciones, nuevas compilaciones ni cambios a los repos oficiales.
+- No se probó una instalación limpia, entrenamiento ni hardware físico.
+
+## Recuperación mediante enlace público
+
+El límite de acceso anterior quedó superado para el texto publicado mediante el enlace público del usuario: docs/shared-conversation-source.json registra la fuente y el método. Se revisaron instalación y experimentos del primer chat; las capturas originales no se reexaminaron y las salidas redactadas no se reconstruyeron.
+
+Se contrastaron joystick Python, campos tick/rpy, actuadores motor y selección de observaciones por teclado con el código local. Se recuperaron read_g1.py, move_elbow.py y stand_g1.py del home Linux: solo se añadieron cabeceras y se verificó su sintaxis, sin importarlos, publicar DDS ni ejecutar física. Procedencia y hashes en script-provenance.json.
+
+Las nuevas comprobaciones distinguen incidencias históricas de recomendaciones de reproducción. No se cambiaron repos oficiales, dependencias, servicios Windows, BIOS, políticas o términos de Conda; no se ejecutaron nuevas sesiones de simulación.
