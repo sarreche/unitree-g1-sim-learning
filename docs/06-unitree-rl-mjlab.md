@@ -49,3 +49,9 @@ Pulsar las teclas con foco en la terminal de g1_ctrl, no en MuJoCo. El relato re
 simulate/config.yaml deshabilita joystick. scene_g1.xml agrega keyframe home con altura 0.793, postura de piernas y brazos de FixStand. main.cc aplica ese keyframe al cargar el modelo. Backspace sigue usando mj_resetData, de modo que no aplica automáticamente home. La copia .bak se excluyó.
 
 Estos cambios están separados en parches para no perder trabajo que no figuraba en la propuesta inicial. Ninguno se aplicó a los repos originales durante la documentación.
+
+## Dependencias de despliegue verificadas
+
+El build local usa SDK C++ en /usr/local y bibliotecas ddsc/ddscxx; el CMake del simulador resuelve unitree_sdk2_DIR=/usr/local/lib/cmake/unitree_sdk2. MuJoCo C++ es 3.3.6 dentro de simulate/mujoco, que está incluido en esta revisión del checkout. El controlador usa ONNX Runtime 1.22.0 de deploy/thirdparty. No son las versiones pip de los venvs.
+
+La config actual tiene enable_elastic_band=0. Las teclas de banda no tendrán efecto allí hasta habilitarla. El build del controlador necesita Boost program_options, yaml-cpp, fmt, Eigen y ZLIB/cnpy; el simulador necesita además GLFW. La [guía Windows/WSL](10-windows11-wsl-setup.md) incluye el orden de instalación y compilación.

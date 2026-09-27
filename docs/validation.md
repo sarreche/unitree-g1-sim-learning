@@ -32,3 +32,13 @@ La limpieza mantiene las fórmulas y configuración recuperadas. Sintaxis correc
 - El cuerpo efectivo original de LowCmdWrite coincide por AST con el recuperado, antes de añadir docstrings.
 - Enlaces internos comprobados; no hay policies ni binarios copiados.
 - Procedencia y hashes de scripts originales/entregados en script-provenance.json.
+
+## Ampliación del historial e instalación
+
+- Rama de trabajo: docs/windows11-setup-and-experience; main no se editó.
+- Lectura de los cinco intercambios disponibles de unitreerobotics. El acceso al historial anterior no estuvo disponible; no se afirma revisión completa.
+- Se inspeccionaron comandos pertinentes del historial Linux, instrucciones locales, caches CMake, manifest de instalación y ldd de ambos binarios.
+- Confirmado SDK C++ en /usr/local, MuJoCo C++ 3.3.6, ONNX Runtime 1.22.0 y entorno Conda adicional.
+- Se verificaron fuentes oficiales de Microsoft y NVIDIA para los pasos Windows/WSL y la separación del driver host.
+- Comandos de instalación incluidos como documentación: no se ejecutaron instalaciones, nuevas compilaciones ni cambios a los repos oficiales.
+- No se probó una instalación limpia, entrenamiento ni hardware físico.

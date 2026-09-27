@@ -1,0 +1,64 @@
+Selected installation commands from persisted Linux history, inspected 2026-09-27.
+Line numbers reflect the local history file, not dates. Presence does not prove success.
+Full shell history and unrelated commands are intentionally omitted.
+
+3: source ~/unitree-env/bin/activate
+31: sudo apt update
+33: sudo apt install -y git python3-pip python3-venv cmake build-essential
+35: git clone https://github.com/unitreerobotics/unitree_mujoco.git
+36: git clone https://github.com/unitreerobotics/unitree_sdk2_python.git
+38: python3 -m venv ~/unitree-env
+39: source ~/unitree-env/bin/activate
+42: pip install -e .
+45: pip install mujoco pygame
+50: sudo apt install -y x11-apps
+77: make -j4
+79: conda activate unitree-rl
+84: conda activate unitree-rl
+98: conda create -n unitree-rl python=3.11 -y
+99: conda activate unitree-rl
+102: conda create -n unitree-rl python=3.11 -y
+103: conda activate unitree-rl
+105: git clone https://github.com/unitreerobotics/unitree_rl_mjlab.git
+110: sudo apt install -y libyaml-cpp-dev libboost-all-dev libeigen3-dev libspdlog-dev libfmt-dev
+111: pip install -e .
+127: cmake ..
+128: make -j4
+132: git clone https://github.com/unitreerobotics/unitree_sdk2.git
+137: cmake ..
+138: make -j4
+139: sudo make install
+143: make -j4
+147: cmake ..
+149: make -j4
+150: sudo apt install -y libglfw3-dev
+152: make -j4
+171: conda activate unitree-rl
+175: conda activate unitree-rl
+201: conda activate unitree-rl
+208: conda activate unitree-rl
+229: make -j4
+231: conda activate unitree-rl
+236: conda activate unitree-rl
+248: source ~/unitree-env/bin/activate
+260: source ~/unitree-env/bin/activate
+265: source ~/unitree-env/bin/activate
+341: python -m venv ~/unitree-rl-env
+342: source ~/unitree-rl-env/bin/activate
+343: pip install --upgrade pip
+344: pip install torch mujoco==3.2.3 pyyaml
+351: git clone https://github.com/unitreerobotics/unitree_rl_gym.git
+355: python3 -m venv ~/unitree-rl-env
+356: source ~/unitree-rl-env/bin/activate
+357: pip install --upgrade pip
+358: pip install torch mujoco==3.2.3 pyyaml
+364: pip install -e .
+366: export PYTHONPATH="$HOME/unitree_rl_gym:$PYTHONPATH"
+370: export PYTHONPATH="$HOME/unitree_rl_gym:$PYTHONPATH"
+375: export PYTHONPATH="$HOME/unitree_rl_gym:$PYTHONPATH"
+389: source ~/unitree-rl-env/bin/activate
+390: export PYTHONPATH="$HOME/unitree_rl_gym:$PYTHONPATH"
+396: source ~/unitree-rl-env/bin/activate
+397: export PYTHONPATH="$HOME/unitree_rl_gym:$PYTHONPATH"
+420: cmake ..
+421: make -j$(nproc)

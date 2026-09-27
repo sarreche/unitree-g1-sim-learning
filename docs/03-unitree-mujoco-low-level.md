@@ -57,3 +57,9 @@ yaw   = atan2(2*(w*z+x*y), 1-2*(y*y+z*z))
 Los ángulos salen en radianes; se convierten a grados solo para imprimir. gyroscope[1] se usó como velocidad de pitch, en rad/s, bajo la convención de ejes del modelo. El signo y el marco deben verificarse antes de extrapolar a otros modelos.
 
 El movimiento de articulaciones y las lecturas reales de motor_state permitieron comprobar que llegaban comandos. Un robot acostado con joints moviéndose prueba comunicación y control articular, no equilibrio.
+
+## Diferencia concreta con el README local
+
+El readme.md oficial inspeccionado etiqueta 7 como bajar y 8 como levantar. El callback Python local hace length -= 0.1 con 7 y length += 0.1 con 8. En el resorte, a igual distancia, acortar aumenta la tensión y alargar la reduce. Se conserva la operación del código como referencia precisa y no se afirma una dirección absoluta del cuerpo en toda condición.
+
+El README oficial de esta revisión declara soporte de desarrollo low-level. Publicar SportModeState en el simulador no demuestra disponibilidad de los servicios de locomoción high-level. Ver [experiencia y alcance](11-experience-and-next-steps.md).

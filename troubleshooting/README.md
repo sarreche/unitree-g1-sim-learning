@@ -21,3 +21,18 @@
 | Mjlab | No entra a baile con teclado | Falta transición en FSM | Aplicar parche y recompilar; 5 desde Velocity, 3 para volver. |
 | Mjlab | Transiciones rápidas repetidas | Posible repetición de teclas, no confirmada | Pulsaciones breves y revisar registros; no se implementó debounce. |
 | Mjlab | Backspace no vuelve a home | Callback usa mj_resetData | El parche home actúa al cargar el modelo; reiniciar simulador si se busca esa condición inicial. |
+
+## Windows/WSL e instalación C++
+
+| Stack | Síntoma | Comprobación y respuesta |
+|---|---|---|
+| Windows/WSL | Entorno o repos no encontrados | Abrir Ubuntu-22.04 explícitamente; Ubuntu y Ubuntu-22.04 tienen homes distintos. |
+| WSLg | No abre el viewer | Comprobar WSL2, /mnt/wslg y DISPLAY/Wayland; actualizar WSL si falta soporte gráfico. No se conserva un fallo gráfico histórico concreto. |
+| GPU | nvidia-smi funciona solo en Windows | Comprobar también dentro de WSL; seguir la guía NVIDIA de WSL, sin instalar driver Linux. |
+| SDK Python | Could not locate cyclonedds | Alternativa oficial: compilar CycloneDDS y definir CYCLONEDDS_HOME. No se demuestra que fuera necesaria en esta máquina. |
+| CMake | No encuentra unitree_sdk2 | Verificar instalación C++ y CMAKE_PREFIX_PATH; la real está en /usr/local, no /opt/unitree_robotics. |
+| CMake/linker | Falta GLFW, yaml-cpp, Boost, fmt o ZLIB | Instalar sus paquetes -dev; consultar la lista consolidada de la guía. |
+| Loader C++ | Biblioteca .so no encontrada | Revisar ldd, prefijo del SDK y bibliotecas vendorizadas. No mezclar pip mujoco con la biblioteca C++. |
+| Entornos | Activación no cambia el binario | unitree-rl de Conda y unitree-rl-env de venv son distintos; g1_ctrl es un ejecutable C++ compilado. |
+
+Estas filas incorporan comprobaciones para reproducir el entorno. No todas representan errores históricos confirmados. Ver [instalación Windows/WSL](../docs/10-windows11-wsl-setup.md).
