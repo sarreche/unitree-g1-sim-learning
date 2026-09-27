@@ -1,0 +1,53 @@
+diff --git a/example/g1/low_level/g1_low_level_example.py b/example/g1/low_level/g1_low_level_example.py
+index 382e863..91b8d17 100644
+--- a/example/g1/low_level/g1_low_level_example.py
++++ b/example/g1/low_level/g1_low_level_example.py
+@@ -87,15 +87,15 @@ class Custom:
+         self.crc = CRC()
+ 
+     def Init(self):
+-        self.msc = MotionSwitcherClient()
+-        self.msc.SetTimeout(5.0)
+-        self.msc.Init()
+-
+-        status, result = self.msc.CheckMode()
+-        while result['name']:
+-            self.msc.ReleaseMode()
+-            status, result = self.msc.CheckMode()
+-            time.sleep(1)
++#        self.msc = MotionSwitcherClient()
++#        self.msc.SetTimeout(5.0)
++#        self.msc.Init()
++#
++#        status, result = self.msc.CheckMode()
++#        while result['name']:
++#            self.msc.ReleaseMode()
++#            status, result = self.msc.CheckMode()
++#            time.sleep(1)
+ 
+         # create publisher #
+         self.lowcmd_publisher_ = ChannelPublisher("rt/lowcmd", LowCmd_)
+@@ -192,14 +192,17 @@ if __name__ == '__main__':
+     print("WARNING: Please ensure there are no obstacles around the robot while running this example.")
+     input("Press Enter to continue...")
+ 
+-    if len(sys.argv)>1:
+-        ChannelFactoryInitialize(0, sys.argv[1])
+-    else:
+-        ChannelFactoryInitialize(0)
++#    if len(sys.argv)>1:
++#        ChannelFactoryInitialize(0, sys.argv[1])
++#    else:
++#        ChannelFactoryInitialize(0)
++
++    ChannelFactoryInitialize(1, "lo")
+ 
+     custom = Custom()
+     custom.Init()
+     custom.Start()
+ 
+     while True:        
+-        time.sleep(1)
+\ No newline at end of file
++        time.sleep(1)
++MotionSwitcherClient

@@ -1,0 +1,37 @@
+{
+  "unitree_mujoco": {
+    "url": "https://github.com/unitreerobotics/unitree_mujoco.git",
+    "commit": "1eb6642e3f3fdfb7fb13a9794fd6a2dd93ea0e7d",
+    "changes": [
+      " M simulate_python/config.py"
+    ]
+  },
+  "unitree_sdk2_python": {
+    "url": "https://github.com/unitreerobotics/unitree_sdk2_python.git",
+    "commit": "814556d15970dd2ecf1c9984e845ca02ab07e206",
+    "changes": [
+      " M example/g1/low_level/g1_low_level_example.py",
+      "?? example/g1/low_level/g1_balance_test.py",
+      "?? example/g1/low_level/g1_stand_test.py"
+    ]
+  },
+  "unitree_rl_gym": {
+    "url": "https://github.com/unitreerobotics/unitree_rl_gym.git",
+    "commit": "276801e46c5d433564f24658bac64f254b7d2d4b",
+    "changes": [
+      " M deploy/deploy_mujoco/configs/g1.yaml",
+      "?? deploy/deploy_mujoco/deploy_mujoco_keyboard.py"
+    ]
+  },
+  "unitree_rl_mjlab": {
+    "url": "https://github.com/unitreerobotics/unitree_rl_mjlab.git",
+    "commit": "1425b15f73bd4095f0df53709d7c389c3eb9e790",
+    "changes": [
+      " M deploy/include/FSM/FSMState.h",
+      " M simulate/config.yaml",
+      " M simulate/src/main.cc",
+      " M src/assets/robots/unitree_g1/xmls/scene_g1.xml",
+      "?? src/assets/robots/unitree_g1/xmls/scene_g1.xml.bak"
+    ]
+  }
+}

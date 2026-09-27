@@ -1,0 +1,17 @@
+{
+  "g1_stand_test.py": {
+    "source": "/home/sarreche/unitree_sdk2_python/example/g1/low_level/g1_stand_test.py",
+    "source_sha256": "3f2d0189755a78850972cdbae475f5204f6e9e95d6bed1e5368e58011b5e2c80",
+    "delivered_sha256": "b7c90735f55147f75236caa1fccbb2d7305292643e36d970f93a567a072e4d03"
+  },
+  "g1_balance_test.py": {
+    "source": "/home/sarreche/unitree_sdk2_python/example/g1/low_level/g1_balance_test.py",
+    "source_sha256": "7e46e452573e69ac1387a36ed1cf464581d3b1fd20655727ecaaf9a71d021968",
+    "delivered_sha256": "f6aceacaccc572eb8200c52bc7fe7fda7666e01e3da0c86d7410c41e0490bfaf"
+  },
+  "deploy_mujoco_keyboard.py": {
+    "source": "/home/sarreche/unitree_rl_gym/deploy/deploy_mujoco/deploy_mujoco_keyboard.py",
+    "source_sha256": "1570edb99068cd58689bdfee9122c7311c1879fe0fede379879d64ce3587cc9c",
+    "delivered_sha256": "75a48f318e2fd8d5de4bc8c6d8a8fb3fa69fb0f622a85223864622752d039c08"
+  }
+}

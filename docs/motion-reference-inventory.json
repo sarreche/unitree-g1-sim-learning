@@ -1,0 +1,54 @@
+{
+  "fps": {
+    "shape": [
+      1
+    ],
+    "dtype": "float64"
+  },
+  "joint_pos": {
+    "shape": [
+      6574,
+      29
+    ],
+    "dtype": "float32"
+  },
+  "joint_vel": {
+    "shape": [
+      6574,
+      29
+    ],
+    "dtype": "float32"
+  },
+  "body_pos_w": {
+    "shape": [
+      6574,
+      30,
+      3
+    ],
+    "dtype": "float32"
+  },
+  "body_quat_w": {
+    "shape": [
+      6574,
+      30,
+      4
+    ],
+    "dtype": "float32"
+  },
+  "body_lin_vel_w": {
+    "shape": [
+      6574,
+      30,
+      3
+    ],
+    "dtype": "float32"
+  },
+  "body_ang_vel_w": {
+    "shape": [
+      6574,
+      30,
+      3
+    ],
+    "dtype": "float32"
+  }
+}

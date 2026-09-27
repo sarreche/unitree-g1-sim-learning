@@ -1,0 +1,39 @@
+diff --git a/simulate/src/main.cc b/simulate/src/main.cc
+index 11983ea..238e077 100755
+--- a/simulate/src/main.cc
++++ b/simulate/src/main.cc
+@@ -547,6 +547,13 @@ void PhysicsThread(mj::Simulate *sim, const char *filename)
+       d = mj_makeData(m);
+     if (d)
+     {
++
++      int home_key = mj_name2id(m, mjOBJ_KEY, "home");
++      if (home_key >= 0)
++      {
++         mj_resetDataKeyframe(m, d, home_key);
++      }
++
+       sim->Load(m, d, filename);
+       mj_forward(m, d);
+ 
+diff --git a/src/assets/robots/unitree_g1/xmls/scene_g1.xml b/src/assets/robots/unitree_g1/xmls/scene_g1.xml
+index bf4238c..f0093f6 100644
+--- a/src/assets/robots/unitree_g1/xmls/scene_g1.xml
++++ b/src/assets/robots/unitree_g1/xmls/scene_g1.xml
+@@ -385,4 +385,14 @@
+     <light pos="1 0 3.5" dir="0 0 -1" directional="true"/>
+     <geom name="floor" size="0 0 0.05" type="plane" material="groundplane"/>
+   </worldbody>
+-</mujoco>
+\ No newline at end of file
++  <keyframe>
++    <key name="home" qpos="
++      0 0 0.793 1 0 0 0
++      -0.1 0 0 0.3 -0.2 0
++      -0.1 0 0 0.3 -0.2 0
++      0 0 0
++      0.35 0.18 0 0.87 0 0 0
++      0.35 -0.18 0 0.87 0 0 0
++    "/>
++  </keyframe>
++</mujoco>
