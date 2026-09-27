@@ -67,17 +67,6 @@ Los controladores low-level son experimentos educativos exclusivos de simulació
 
 La documentación refleja el estado local inspeccionado el 27 de septiembre de 2026. Las observaciones de movimiento proceden de los chats unitreerobotics y unitreerobotics2; no se repitieron las pruebas visuales al preparar este repositorio.
 
-## Preparar el repositorio Git
-
-La carpeta está preparada, pero Git no se inicializó y no se creó ni publicó un repositorio remoto. Desde esta carpeta, cuando quieras hacerlo:
-
-```bash
-git init
-git status --short
-git add README.md docs scripts configs patches troubleshooting licenses LICENSE THIRD_PARTY_NOTICES.md .gitignore
-git diff --cached --stat
-git commit -m "Document Unitree G1 simulation learning lab"
-```
-
+##
 La documentación y los aportes originales de Sarreche se ofrecen bajo [licencia MIT](LICENSE). El material de terceros y las partes derivadas conservan sus licencias BSD-3-Clause o Apache-2.0 y sus atribuciones; ver [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
