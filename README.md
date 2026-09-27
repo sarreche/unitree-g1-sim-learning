@@ -57,6 +57,8 @@ Mjlab: teclado/gamepad → FSM → policy ONNX → LowCmd → simulador DDS (dom
 12. [Validación realizada](docs/validation.md)
 13. [Instalación desde Windows 11 y WSL2](docs/10-windows11-wsl-setup.md)
 14. [Experiencia, decisiones y próximos pasos](docs/11-experience-and-next-steps.md)
+15. [Historial recuperado: dos PCs, primeras pruebas y fallos](docs/12-recovered-history.md)
+16. [Prototipos iniciales preservados](scripts/historical/README.md)
 
 Los controladores low-level son experimentos educativos exclusivos de simulación. No constituyen un controlador validado para un G1 físico. Ver los límites concretos en sim-to-real.
 
@@ -67,7 +69,7 @@ Los controladores low-level son experimentos educativos exclusivos de simulació
 - [unitree_rl_gym](https://github.com/unitreerobotics/unitree_rl_gym)
 - [unitree_rl_mjlab](https://github.com/unitreerobotics/unitree_rl_mjlab)
 
-La documentación refleja el estado local inspeccionado el 27 de septiembre de 2026. Las observaciones de movimiento proceden de los chats unitreerobotics y unitreerobotics2; no se repitieron las pruebas visuales al preparar este repositorio.
+La documentación refleja el estado local inspeccionado el 27 de septiembre de 2026. Las observaciones de movimiento proceden de los chats unitreerobotics y unitreerobotics2; no se repitieron las pruebas visuales al preparar este repositorio. La conversación pública permitió recuperar los intentos iniciales y tres prototipos adicionales, incluidos resultados fallidos y diagnósticos que quedaron abiertos.
 
 ## Licencia
 

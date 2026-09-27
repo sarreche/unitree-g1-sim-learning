@@ -29,3 +29,7 @@ El controlador saturaba y la banda se liberaba progresivamente. La ankle strateg
 Se eliminaron imports duplicados, bloques comentados de MotionSwitcherClient, identificadores sin uso y una primera definición de LowCmdWrite que Python sobrescribía en stand. Se mantuvieron la postura, ganancias, corrección, domain, periodo y mensajes. Se expandieron tabs a espacios. No se añadió una nueva estrategia de balance ni se volvió a experimentar.
 
 Los archivos son derivados de ejemplos oficiales, con modificaciones experimentales; no son creación íntegramente original. Ver avisos y licencias. No ejecutar en un robot físico.
+
+## Experimento anterior: stand_g1.py
+
+La primera charla ya contenía una demo de postura cero de los 29 motores. Se recuperó ~/stand_g1.py en scripts/historical. Se probó iniciar el publisher antes del simulador; aun así no mantuvo equilibrio. No confundirlo con g1_stand_test.py, que usa rodillas flexionadas y el vector de piernas documentado aquí. Ambos fueron pruebas de pose, no una rutina de recuperación del suelo.

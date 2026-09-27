@@ -36,3 +36,23 @@
 | Entornos | Activación no cambia el binario | unitree-rl de Conda y unitree-rl-env de venv son distintos; g1_ctrl es un ejecutable C++ compilado. |
 
 Estas filas incorporan comprobaciones para reproducir el entorno. No todas representan errores históricos confirmados. Ver [instalación Windows/WSL](../docs/10-windows11-wsl-setup.md).
+
+## Incidencias confirmadas o relatadas en el historial público
+
+| Incidencia | Evidencia / respuesta aplicada | Alcance |
+|---|---|---|
+| WSL sin kernel o virtualización | En el primer equipo se actualizó WSL y habilitó Intel VMX | Relato de capturas; no se reconfiguró BIOS en este trabajo |
+| xeyes no abre y RemoteApp falla | Log relató rdp_peer is not initialized; se cambió de PC | Causa raíz del primer equipo no demostrada |
+| Windows Update error 1058 | Se investigaron servicio y políticas; el bloqueo persistió | No es una receta validada para arreglar WSLg |
+| pip Permission denied global | Crear/activar unitree-env y repetir instalación | No fue un fallo de CycloneDDS |
+| docker-desktop predeterminado | Seleccionar Ubuntu-22.04 y verificar lsb_release | No borrar la distribución de Docker |
+| LowState todo cero | Deshabilitar joystick en Python y reiniciar | Callback activo no acredita física en marcha |
+| tick/rpy siempre cero | No se asignan en el bridge local | Mirar campos implementados |
+| CondaToSNonInteractiveError seguido por EnvironmentNameNotFound | Revisar/aceptar canales elegidos y repetir creación | El entorno no existía después de fallar create |
+| Falta go2/go2.h al compilar G1 | Instalar SDK2 C++ en /usr/local | Dependencia compartida, no robot mal seleccionado |
+| Falta GLFW/glfw3.h y -lglfw | Instalar libglfw3-dev y repetir make | pip glfw no aporta los headers del sistema |
+| Joystick open failed + segfault al arrancar C++ | use_joystick=0 evitó ese arranque fallido | Distinto del posible segfault al cerrar viewer |
+| Gamepad host ausente en /dev/input | Se optó por teclas FSM | Passthrough USB no probado |
+| 1/2 funcionan pero WASD no controla Velocity | La config usa velocity_commands, no keyboard_velocity_commands | No se activó ese cambio durante documentación |
+| GUI Control no produce postura esperada | Revisar tipo de actuador motor y bridge de torques | No interpretar todo Control como posición |
+| HOME correcto pero el cuerpo cae | Se confirmó postura inicial, no equilibrio | No atribuir causa definitiva a policy/observaciones |

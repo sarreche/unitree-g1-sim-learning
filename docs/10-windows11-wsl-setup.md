@@ -1,6 +1,6 @@
 # De Windows 11 a los entornos del laboratorio
 
-Esta guía combina comandos recuperados del historial Linux, configuración y binarios inspeccionados, y pasos actuales de las fuentes oficiales. No es una transcripción completa del chat ni una instalación desde cero ensayada. Los pasos de Windows son una guía para reproducir la base; no se conserva evidencia de cada comando usado originalmente allí.
+Esta guía combina comandos recuperados del historial Linux, configuración y binarios inspeccionados, y pasos actuales de las fuentes oficiales. No es una transcripción completa del chat ni una instalación desde cero ensayada. El enlace público posterior permitió recuperar pasos concretos de Windows y sus salidas textuales. Algunas capturas originales no se reexaminaron; sus descripciones se tratan como relato histórico. Ver [cronología recuperada](12-recovered-history.md).
 
 ## 1. Mapa del entorno
 
@@ -196,7 +196,7 @@ sudo apt install -y x11-apps
 xeyes
 ```
 
-La ventana prueba conectividad gráfica X11; no prueba aceleración OpenGL, DDS ni equilibrio. No se recuperó una salida de esa prueba, así que no se afirma un resultado histórico concreto.
+La ventana prueba conectividad gráfica X11; no prueba aceleración OpenGL, DDS ni equilibrio. El enlace público recuperó la confirmación del usuario de que xeyes mostró sus ojos en la PC Windows 11. En la PC Windows 10 anterior no había aparecido la ventana y se habían mostrado errores de RemoteApp.
 
 ## Entorno Conda adicional
 
@@ -210,3 +210,53 @@ python -m pip install -e .
 ```
 
 Este paso instala el paquete Python y sus dependencias de entrenamiento; no es necesario para lanzar los binarios C++ del despliegue. No ejecutarlo para sustituir los dos venvs recuperados. Las versiones del Conda actual están en 02-environment.md; su instalación no demuestra entrenamiento propio.
+
+## Particularidades que se recuperaron del enlace público
+
+### Virtualización y distribución correcta
+
+El primer intento en Windows 10 encontró virtualización deshabilitada. Se habilitó Intel VMX en la BIOS de una ASUS PRIME H310M-E y después Ubuntu pudo instalarse. No es un paso obligatorio de reconfiguración: si WSL2 ya funciona, la virtualización está disponible. Para una PC nueva comprobar Administrador de tareas → Rendimiento → CPU antes de instalar.
+
+La PC Windows 11 ya tenía virtualización habilitada. Allí docker-desktop era inicialmente la distribución predeterminada; el Ubuntu instalado sin elegir versión reportó Ubuntu 26.04.1. Se conservó y se instaló Ubuntu-22.04 aparte. Finalmente se seleccionó:
+
+```powershell
+wsl --set-default Ubuntu-22.04
+wsl -d Ubuntu-22.04
+```
+
+Desde Ubuntu, lsb_release -a confirmó 22.04.5. Este cambio redujo diferencias respecto del entorno conocido; el relato no demuestra que el SDK Python sea incompatible con Ubuntu 26.04.
+
+### Instalación Python sin permisos globales
+
+En el primer equipo, pip install -e . intentó escribir en /usr/local/lib/python3.10/dist-packages y falló con Permission denied. La solución fue crear y activar unitree-env y repetir la instalación dentro de él. Comprobar python -m pip --version permite ver qué pip se está usando. No resolver este caso con sudo pip.
+
+### Conda y canales
+
+La creación de unitree-rl falló primero con CondaToSNonInteractiveError para los canales main y r. Por eso activar unitree-rl produjo EnvironmentNameNotFound: el entorno todavía no existía. En la experiencia se aceptaron los términos de esos canales y se repitió conda create.
+
+Para reproducirlo, revisar los términos aplicables antes de aceptar. Si se elige usarlos, los comandos históricos fueron:
+
+```bash
+conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main
+conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r
+conda create -n unitree-rl python=3.11 -y
+conda activate unitree-rl
+```
+
+No se aceptó ningún término durante esta documentación. Los canales disponibles y sus condiciones pueden cambiar; consultar [gestión oficial de términos de Conda](https://www.anaconda.com/docs/getting-started/tos-plugin).
+
+### Los dos fallos de joystick
+
+Python: USE_JOYSTICK=1 sin dispositivo llamó SetupJoystick, que imprime No gamepad detected y termina el thread mediante sys.exit antes del bucle físico. La ventana podía seguir visible y el estado recibido permanecer en cero. Cambiar USE_JOYSTICK=0 y reiniciar permitió avanzar física y leer articulaciones variables.
+
+C++ mjlab: el log aportado muestra Joystick open failed seguido de Segmentation fault. Se deshabilitó use_joystick en simulate/config.yaml y el simulador pudo seguir abierto. Esto es distinto del posible segfault al cerrar un viewer: no unificar sus causas.
+
+### Gamepad USB en WSL
+
+Se conectó un gamepad genérico a Windows, pero ls -l /dev/input/ devolvió que la ruta no existía en esa sesión WSL. Se eligió agregar teclas de FSM en lugar de configurar passthrough USB. No se instaló ni validó passthrough en esta experiencia, ni se concluye que cualquier joystick sea inutilizable en WSL.
+
+### Dependencias C++ que faltaron efectivamente
+
+Al compilar g1_ctrl faltó unitree/dds_wrapper/robots/go2/go2.h. El SDK Python no instala esos headers. Instalar SDK C++ en /usr/local resolvió el problema aunque el controlador fuera G1: su código compartido incluye esa ruta.
+
+El simulador después falló con GLFW/glfw3.h y cannot find -lglfw. Instalar libglfw3-dev y repetir make -j4 resolvió la compilación. El módulo glfw de pip no sustituye el paquete de desarrollo C++.

@@ -21,4 +21,12 @@ El próximo paso quedó intencionalmente abierto: estudiar observaciones y refer
 - La GPU y su VRAM orientan decisiones de stack, pero una propuesta compatible no demuestra una instalación funcional.
 - Detener una ampliación del entorno también fue una decisión explícita: Isaac quedó como alternativa considerada, no logro del proyecto.
 
-Ver [experiencia y próximos pasos](11-experience-and-next-steps.md) para las propuestas y el límite de acceso al historial.
+Ver [experiencia y próximos pasos](11-experience-and-next-steps.md) y [cronología recuperada](12-recovered-history.md) para distinguir propuestas, resultados y límites de las fuentes.
+
+## Lecciones recuperadas del historial público
+
+- Los errores de presentación gráfica del primer equipo se separan de SDK/DDS: xeyes sirvió como prueba mínima y funcionó en la nueva PC.
+- USE_JOYSTICK puede impedir que la física arranque aun con viewer abierto; mirar el estado del proceso antes de atribuir ceros a sensores.
+- Las primeras órdenes al codo fueron exitosas como prueba de comunicación, pero no establecieron una skill con límites y trayectoria.
+- Activar teclas de una FSM y activar una observación de velocidad por teclado son cambios diferentes.
+- Los ensayos fallidos, hipótesis corregidas y cambios de equipo también forman parte de la experiencia: no deben desaparecer de una documentación orientada a reproducirla.

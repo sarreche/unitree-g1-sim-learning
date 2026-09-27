@@ -2,9 +2,11 @@
 
 ## Qué se pudo recuperar de unitreerobotics
 
-La lectura del chat proporcionó sus últimos cinco intercambios: explicación de equilibrio, propuestas de aplicaciones, decisión de detener la expansión del stack NVIDIA, propuesta de verificar GPU y salida de nvidia-smi de Windows. La herramienta informó hasMore=false y no entregó cursor a los mensajes anteriores. El intento de abrir el chat completo con el navegador falló por un problema del runtime. Por tanto, no se afirma haber revisado todo el historial ni reconstruido cada incidencia de instalación.
+El primer acceso solo proporcionó cinco intercambios. Posteriormente el usuario compartió un [enlace público a la conversación](https://chatgpt.com/share/6ab97458-3858-83e9-8b87-6f4cbc25416a) que permitió recuperar el historial textual publicado, incluidos los intentos en Windows 10, la nueva PC Windows 11, instalación, primeras pruebas DDS y problemas de mjlab. Se eliminaron duplicados por ID de mensaje; la extracción contiene 645 registros, incluidos mensajes vacíos, bloques de código y salidas redactadas del servicio.
 
-Para completar la experiencia se contrastaron esos intercambios con comandos pertinentes de .bash_history, READMEs locales, CMakeCache, install_manifest, ldd y paquetes instalados. Solo se recuperaron comandos relacionados con el laboratorio; no se publica el historial completo. Un comando presente en history acredita que fue escrito, no que terminó exitosamente. Los artefactos de instalación y binarios aportan evidencia adicional.
+Se revisó el texto recuperable; no se reexaminaron las capturas ni adjuntos originales. Cuando una incidencia solo aparece como interpretación de una captura por el asistente, se identifica como relato histórico, no como comprobación independiente. El HTML y la transcripción completa se mantuvieron fuera del repo; aquí se documentan los hechos pertinentes y la fuente.
+
+Para completar la experiencia se contrastó el historial público con comandos pertinentes de .bash_history, READMEs locales, CMakeCache, install_manifest, ldd y paquetes instalados. Solo se recuperaron comandos relacionados con el laboratorio; no se publica el historial completo. Un comando presente en history acredita que fue escrito, no que terminó exitosamente. Los artefactos de instalación y binarios aportan evidencia adicional.
 
 ## Cambió el nivel del problema
 

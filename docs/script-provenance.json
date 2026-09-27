@@ -13,5 +13,23 @@
     "source": "/home/sarreche/unitree_rl_gym/deploy/deploy_mujoco/deploy_mujoco_keyboard.py",
     "source_sha256": "1570edb99068cd58689bdfee9122c7311c1879fe0fede379879d64ce3587cc9c",
     "delivered_sha256": "75a48f318e2fd8d5de4bc8c6d8a8fb3fa69fb0f622a85223864622752d039c08"
+  },
+  "historical/read_g1.py": {
+    "source": "/home/sarreche/read_g1.py",
+    "source_sha256": "b19ad45bb2b76ad571874717dac12a5586ad255d9d404bbc3bf4ef3723cc03ab",
+    "delivered_sha256": "fd7c194e7946339fca261422d40afae4cde63b0c45e39e597a4343f89e785d4e",
+    "change": "Provenance/license header only; body preserved."
+  },
+  "historical/move_elbow.py": {
+    "source": "/home/sarreche/move_elbow.py",
+    "source_sha256": "87665162fce37b66821d88543fb5614d991c2a42fb0c1d601aaa8c32f1c03d3c",
+    "delivered_sha256": "bfbdc9c73ea7dd40d9bb23a9b9aaaaa8561402a16d307427c849037e32b77958",
+    "change": "Provenance/license header only; body preserved."
+  },
+  "historical/stand_g1.py": {
+    "source": "/home/sarreche/stand_g1.py",
+    "source_sha256": "b7322e5b05622c2af73006ae8b4c5b690a9bf260945662064f4bcf4599224842",
+    "delivered_sha256": "95f0f030abd1bea000bc2057331a214c1874f7c9f39a80d2e6d340a640074613",
+    "change": "Provenance/license header only; body preserved."
   }
 }

@@ -55,3 +55,20 @@ Estos cambios están separados en parches para no perder trabajo que no figuraba
 El build local usa SDK C++ en /usr/local y bibliotecas ddsc/ddscxx; el CMake del simulador resuelve unitree_sdk2_DIR=/usr/local/lib/cmake/unitree_sdk2. MuJoCo C++ es 3.3.6 dentro de simulate/mujoco, que está incluido en esta revisión del checkout. El controlador usa ONNX Runtime 1.22.0 de deploy/thirdparty. No son las versiones pip de los venvs.
 
 La config actual tiene enable_elastic_band=0. Las teclas de banda no tendrán efecto allí hasta habilitarla. El build del controlador necesita Boost program_options, yaml-cpp, fmt, Eigen y ZLIB/cnpy; el simulador necesita además GLFW. La [guía Windows/WSL](10-windows11-wsl-setup.md) incluye el orden de instalación y compilación.
+
+## Teclas de velocidad: soporte registrado, configuración distinta
+
+State_RLBase.cpp registra keyboard_velocity_commands y comenta que hay que sustituir velocity_commands por ese nombre en el deploy.yaml para seleccionarlo. El deploy.yaml local inspeccionado conserva velocity_commands; agregar teclas de FSM no activa automáticamente esta observación.
+
+| Tecla en el ejemplo mjlab | Vector definido [vx, vy, yaw_rate] |
+|---|---|
+| W | [1,0,0] |
+| S | [-1,0,0] |
+| A | [0,1,0] |
+| D | [0,-1,0] |
+| Q | [0,0,1] |
+| E | [0,0,-1] |
+
+Son los valores escritos en ese ejemplo, no recomendaciones ni una prueba de cumplimiento de los rangos del deploy.yaml. La función retorna cero si la tecla leída no coincide. El mapeo difiere del script RL gym entregado, donde A/D giran y Q/E mueven lateralmente. No se cambió deploy.yaml ni se añadió un experimento nuevo durante la documentación.
+
+Las primeras pruebas de mjlab relatadas en unitreerobotics incluyeron caídas al reanudar desde Pause, incluso con Velocity activa y después de agregar home. Su causa quedó abierta. Los cambios y resultados de la segunda charla deben interpretarse en su propia sesión.
